@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Process form submission
+
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -8,27 +8,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = htmlspecialchars($_POST['service']);
     $other_service = isset($_POST['other_service']) ? htmlspecialchars($_POST['other_service']) : '';
     $message = htmlspecialchars($_POST['message']);
-    
+
+    // If "Other" is selected, save the custom service
+    if ($service == "Other" && !empty($other_service)) {
+        $service = $other_service;
+    }
+
+    // Save to PostgreSQL
+    $query = "INSERT INTO consultations
+    (fullname, email, phone, company_name, service, note)
+    VALUES ($1, $2, $3, $4, $5, $6)";
+
+    $result = pg_query_params(
+        $conn,
+        $query,
+        array(
+            $name,
+            $email,
+            $phone,
+            $company,
+            $service,
+            $message
+        )
+    );
+
     // Email configuration
     $to = "venbridgeoutsourcing@gmail.com";
     $subject = "New Consultation Request from " . $name;
-    
+
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n";
     $email_content .= "Phone: $phone\n";
     $email_content .= "Company: $company\n";
-    if ($service === "Other" && $other_service) {
-        $email_content .= "Service Interested In: $other_service\n";
-    } else {
-        $email_content .= "Service Interested In: $service\n";
-    }
+    $email_content .= "Service: $service\n";
     $email_content .= "Message:\n$message\n";
-    
+
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
-    
-    // Send email
-    if (mail($to, $subject, $email_content, $headers)) {
+
+    if ($result && mail($to, $subject, $email_content, $headers)) {
         $success = true;
     } else {
         $success = false;
