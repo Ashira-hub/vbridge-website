@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     // Email configuration
-    $to = "venbridgeoutsourcing@gmail.com";
+    $to = "kiervyxestole@gmail.com";
     $subject = "New Consultation Request from " . $name;
 
     $email_content = "Name: $name\n";
