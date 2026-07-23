@@ -12,6 +12,4 @@ $conn = pg_connect(
 if (!$conn) {
     die("Connection failed: " . pg_last_error());
 }
-
-echo "Connected to PostgreSQL successfully!";
 ?>

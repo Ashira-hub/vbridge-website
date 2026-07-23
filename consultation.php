@@ -34,6 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         )
     );
 
+    if (!$result) {
+        $error = "Database error: " . pg_last_error($conn);
+    }
+
     // Email configuration
     $to = "kiervyxestole@gmail.com";
     $subject = "New Consultation Request from " . $name;
@@ -92,6 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (isset($success) && $success): ?>
             <div class="success-message">
                 <strong>Thank you!</strong> Your consultation request has been submitted successfully. We'll be in touch soon.
+            </div>
+        <?php elseif (isset($error)): ?>
+            <div class="error-message">
+                <strong>Oops!</strong> <?php echo $error; ?>
             </div>
         <?php elseif (isset($success) && !$success): ?>
             <div class="error-message">
