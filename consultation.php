@@ -52,7 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
 
-    if ($result && mail($to, $subject, $email_content, $headers)) {
+    // Try to send email, but don't fail if it doesn't work
+    mail($to, $subject, $email_content, $headers);
+
+    if ($result) {
         $success = true;
     } else {
         $success = false;
