@@ -347,6 +347,12 @@
                     <li><a href="#">Schedule a Call</a></li>
                 </ul>
             </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 VBridge Outsourcing. All rights reserved.</p>
