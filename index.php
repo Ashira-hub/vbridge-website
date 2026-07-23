@@ -342,7 +342,7 @@
             <div class="footer-section">
                 <h4>Follow Us</h4>
                 <ul>
-                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.facebook.com/share/1CMqsVVUeG/" target="_blank">Facebook</a></li>
                 </ul>
             </div>
             <div class="footer-section">
