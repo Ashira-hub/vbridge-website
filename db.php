@@ -6,11 +6,11 @@ $user = "postgres";
 $password = "bfGvykAKNfipUDEKXvYChZTniBDfuyTz";
 
 $conn = pg_connect(
-    "host=$host port=$port dbname=$dbname user=$user password=$password"
+    "host=$host port=$port dbname=$dbname user=$user password=$password sslmode=require"
 );
 
 if (!$conn) {
-    die("Connection failed: " . pg_last_error());
+    die("Connection failed: Unable to connect to PostgreSQL server. Please check your network connection and database credentials.");
 }
 
 echo "Connected to PostgreSQL successfully!";
