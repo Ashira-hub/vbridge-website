@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Navigation -->
     <nav>
         <a href="index.php" class="logo">
-            <img src="assets/venbridge_logo.png" alt="VenBridge Logo">
+            <img src="assets/vbridge_logo.png" alt="VenBridge Logo">
         </a>
         <ul class="nav-links">
             <li><a href="index.php">Home</a></li>
