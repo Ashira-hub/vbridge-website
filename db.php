@@ -1,6 +1,6 @@
 <?php
 $host = "sakura.proxy.rlwy.net";
-$port = "5432";
+$port = "13464";
 $dbname = "railway";
 $user = "postgres";
 $password = "bfGvykAKNfipUDEKXvYChZTniBDfuyTz";
