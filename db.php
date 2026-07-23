@@ -1,5 +1,5 @@
 <?php
-$host = "sakura.proxy.rlwy.net";
+$host = "vbridge-outsourcing.up.railway.app";
 $port = "5432";
 $dbname = "railway";
 $user = "postgres";
