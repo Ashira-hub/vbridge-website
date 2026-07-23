@@ -1,6 +1,4 @@
 <?php
-include 'db.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Process form submission
     $name = htmlspecialchars($_POST['name']);
@@ -10,20 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $service = htmlspecialchars($_POST['service']);
     $other_service = isset($_POST['other_service']) ? htmlspecialchars($_POST['other_service']) : '';
     $message = htmlspecialchars($_POST['message']);
-    
-    // Insert into database
-    $final_service = ($service === "Other" && $other_service) ? $other_service : $service;
-    $query = "INSERT INTO consultation (fullname, email, phone, company_name, service, consultation_date, consultation_time, note, created_at) 
-              VALUES ($1, $2, $3, $4, $5, NOW(), NULL, $6, NOW())";
-    
-    $result = pg_query_params($conn, $query, array($name, $email, $phone, $company, $final_service, $message));
-    
-    if ($result) {
-        $db_success = true;
-    } else {
-        $db_success = false;
-        $db_error = pg_last_error($conn);
-    }
     
     // Email configuration
     $to = "venbridgeoutsourcing@gmail.com";
