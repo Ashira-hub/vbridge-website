@@ -412,6 +412,10 @@ footer {
     margin-bottom: 2rem;
 }
 
+.footer-section:nth-child(4) {
+    margin-right: 3rem;
+}
+
 .footer-section h4 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
