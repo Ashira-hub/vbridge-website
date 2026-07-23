@@ -340,17 +340,17 @@
                 </ul>
             </div>
             <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="#">venbridgeoutsourcing@gmail.com</a></li>
                     <li><a href="#">+639623859269</a></li>
                     <li><a href="#">Schedule a Call</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <ul>
-                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
                 </ul>
             </div>
         </div>
